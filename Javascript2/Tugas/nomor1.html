@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+
+    <title>Hasil Kondisi Bilangan</title>
+    <style>
+      .container {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      #result {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="mb-4">Hasil Kondisi Bilangan</h2>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      // Meminta input dua bilangan menggunakan prompt
+      var bilangan1 = prompt('Masukkan bilangan pertama:');
+      var bilangan2 = prompt('Masukkan bilangan kedua:');
+
+      // Mengubah input menjadi bilangan menggunakan parseFloat
+      bilangan1 = parseFloat(bilangan1);
+      bilangan2 = parseFloat(bilangan2);
+
+      // Membuat variabel untuk menampung hasil kondisi
+      var hasilKondisi = '';
+
+      // Memeriksa kondisi kedua bilangan
+      if (bilangan1 > bilangan2) {
+        hasilKondisi = 'Bilangan ke-1 lebih besar daripada bilangan ke-2';
+      } else if (bilangan1 < bilangan2) {
+        hasilKondisi = 'Bilangan ke-2 lebih besar daripada bilangan ke-1';
+      } else {
+        hasilKondisi = 'Kedua bilangan sama besar';
+      }
+
+      // Menampilkan hasil kondisi dalam elemen dengan id "result"
+      document.getElementById('result').innerHTML = hasilKondisi;
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

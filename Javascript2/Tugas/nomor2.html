@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+
+    <title>Form Praktikan PPW1</title>
+    <style>
+      .container {
+        margin-top: 30px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      .centered-text {
+        text-align: center;
+      }
+
+      .small-table {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="mb-4">Form Praktikan PPW1</h2>
+    </div>
+
+    <div class="container">
+      <div id="result">
+        <table class="table table-dark table-striped-columns small-table mx-auto">
+          <thead>
+            <tr>
+              <th scope="col">Nama Data</th>
+              <th scope="col">Data Praktikan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nama</td>
+              <td id="nama"></td>
+            </tr>
+            <tr>
+              <td>NIM</td>
+              <td id="nim"></td>
+            </tr>
+            <tr>
+              <td>Angkatan</td>
+              <td id="angkatan"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      var isPraktikanPPW1 = confirm('Apakah Anda praktikan PPW1?');
+
+      if (isPraktikanPPW1) {
+        var nama = prompt('Masukkan Nama:');
+        var nim = prompt('Masukkan NIM:');
+        var angkatan = prompt('Masukkan Angkatan:');
+
+        if (nama && nim && angkatan) {
+          document.getElementById('nama').textContent = nama;
+          document.getElementById('nim').textContent = nim;
+          document.getElementById('angkatan').textContent = angkatan;
+        } else {
+          document.getElementById('result').innerHTML = '<p class="centered-text">Mohon isi semua data!</p>';
+          document.querySelector('table').style.display = 'none';
+        }
+      } else {
+        document.getElementById('result').innerHTML = '<p class="centered-text">Anda bukan praktikan PPW1, Anda tidak boleh masuk!</p>';
+        document.querySelector('table').style.display = 'none';
+      }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

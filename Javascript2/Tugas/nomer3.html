@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" />
+
+    <title>Kalkulator Konsumsi Plastik Tahunan</title>
+    <style>
+      .container {
+        max-width: 500px;
+        margin-top: 50px;
+        font-weight: bold;
+      }
+
+      h2 {
+        text-align: center;
+        color: darkorange;
+      }
+
+      p span {
+        color: darkorange;
+      }
+
+      th {
+        text-align: center;
+      }
+
+      .form-control {
+        width: 80px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4 px-4 bg-light">
+      <div class="row text-center mb-4">
+        <h2>ITEMS YOU COUNSUME DAILY</h2>
+        <h5>Please enter the quantity for <b>each day:</b></h5>
+      </div>
+      <table class="table table-borderless">
+        <thead>
+          <tr class="text-center">
+            <th></th>
+            <th scope="col">DAY</th>
+            <th scope="col">YEAR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plastic Bottles</td>
+            <td><input type="number" class="form-control" id="bottlesPerDay" oninput="calculatePlasticConsumption()" value="5" /></td>
+            <td><span id="bottlesPerYear">1825</span></td>
+          </tr>
+          <tr>
+            <td>Plastic Cups</td>
+            <td><input type="number" class="form-control" id="cupsPerDay" oninput="calculatePlasticConsumption()" value="6" /></td>
+            <td><span id="cupsPerYear">2190</span></td>
+          </tr>
+          <tr>
+            <td>Straws</td>
+            <td><input type="number" class="form-control" id="strawsPerDay" oninput="calculatePlasticConsumption()" width="50px" /></td>
+            <td><span id="strawsPerYear">0</span></td>
+          </tr>
+          <tr>
+            <td>Cotton Swabs</td>
+            <td><input type="number" class="form-control" id="swabsPerDay" oninput="calculatePlasticConsumption()" /></td>
+            <td><span id="swabsPerYear">0</span></td>
+          </tr>
+          <tr>
+            <td>Cigarette Butts</td>
+            <td><input type="number" class="form-control" id="buttsPerDay" oninput="calculatePlasticConsumption()" /></td>
+            <td><span id="buttsPerYear">0</span></td>
+          </tr>
+          <tr>
+            <td>Plastic Resealable Bags</td>
+            <td><input type="number" class="form-control" id="bagsPerDay" oninput="calculatePlasticConsumption()" /></td>
+            <td><span id="bagsPerYear">0</span></td>
+          </tr>
+          <tr>
+            <td>Plastic Cling Wrap</td>
+            <td><input type="number" class="form-control" id="clingWrapPerDay" oninput="calculatePlasticConsumption()" /></td>
+            <td><span id="clingWrapPerYear">0</span></td>
+          </tr>
+          <tr>
+            <td>Plastic Silverware</td>
+            <td><input type="number" class="form-control" id="silverwarePerDay" oninput="calculatePlasticConsumption()" /></td>
+            <td><span id="silverwarePerYear">0</span></td>
+          </tr>
+          <tr>
+            <td>Plastic Stirrers</td>
+            <td><input type="number" class="form-control" id="stirrersPerDay" oninput="calculatePlasticConsumption()" /></td>
+            <td><span id="stirrersPerYear">0</span></td>
+          </tr>
+          <tr>
+            <td>Food Containers</td>
+            <td><input type="number" class="form-control" id="containersPerDay" oninput="calculatePlasticConsumption()" /></td>
+            <td><span id="containersPerYear">0</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculatePlasticConsumption() {
+        var bottlesPerDay = parseInt(document.getElementById('bottlesPerDay').value);
+        var cupsPerDay = parseInt(document.getElementById('cupsPerDay').value);
+        var strawsPerDay = parseInt(document.getElementById('strawsPerDay').value);
+        var swabsPerDay = parseInt(document.getElementById('swabsPerDay').value);
+        var buttsPerDay = parseInt(document.getElementById('buttsPerDay').value);
+        var bagsPerDay = parseInt(document.getElementById('bagsPerDay').value);
+        var clingWrapPerDay = parseInt(document.getElementById('clingWrapPerDay').value);
+        var silverwarePerDay = parseInt(document.getElementById('silverwarePerDay').value);
+        var stirrersPerDay = parseInt(document.getElementById('stirrersPerDay').value);
+        var containersPerDay = parseInt(document.getElementById('containersPerDay').value);
+
+        var bottlesPerYear = bottlesPerDay * 365 || 0;
+        var cupsPerYear = cupsPerDay * 365 || 0;
+        var strawsPerYear = strawsPerDay * 365 || 0;
+        var swabsPerYear = swabsPerDay * 365 || 0;
+        var buttsPerYear = buttsPerDay * 365 || 0;
+        var bagsPerYear = bagsPerDay * 365 || 0;
+        var clingWrapPerYear = clingWrapPerDay * 365 || 0;
+        var silverwarePerYear = silverwarePerDay * 365 || 0;
+        var stirrersPerYear = stirrersPerDay * 365 || 0;
+        var containersPerYear = containersPerDay * 365 || 0;
+
+        document.getElementById('bottlesPerYear').textContent = bottlesPerYear;
+        document.getElementById('cupsPerYear').textContent = cupsPerYear;
+        document.getElementById('strawsPerYear').textContent = strawsPerYear;
+        document.getElementById('swabsPerYear').textContent = swabsPerYear;
+        document.getElementById('buttsPerYear').textContent = buttsPerYear;
+        document.getElementById('bagsPerYear').textContent = bagsPerYear;
+        document.getElementById('clingWrapPerYear').textContent = clingWrapPerYear;
+        document.getElementById('silverwarePerYear').textContent = silverwarePerYear;
+        document.getElementById('stirrersPerYear').textContent = stirrersPerYear;
+        document.getElementById('containersPerYear').textContent = containersPerYear;
+
+        var totalPlasticConsumption = bottlesPerYear + cupsPerYear + strawsPerYear + swabsPerYear + buttsPerYear + bagsPerYear + clingWrapPerYear + silverwarePerYear + stirrersPerYear + containersPerYear;
+
+        document.getElementById('result').innerHTML = `<p>Current Yearly Consumption <span><b>    ${totalPlasticConsumption}<b></span></p>`;
+      }
+    </script>
+  </body>
+</html>

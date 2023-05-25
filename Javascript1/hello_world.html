@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Javascript dari Nol</title>
+    <script>
+      // ini penulisan kode javascript didalam tag <head>
+      console.log('Hello JS dari Head');
+
+      // alert
+      alert('Selamat data di tutorial belajar Javascript');
+
+      function sayHello() {
+        alert('Hello!');
+      }
+
+      // document.write
+      document.write('<h1>Hello World</h1');
+      document.write('<hr>');
+      document.write('<p>Saya sedang belajar Javascript</p>');
+      document.write('di <b>petanikode.com</b>');
+    </script>
+  </head>
+
+  <body>
+    <h1>Tutorial Javascript untuk Pemula</h1>
+    <div id="hasil-output"></div>
+
+    <h1>Data Pengguna</h1>
+    <p>Nama: <span id="nama">John Doe</span></p>
+    <p>Email: <span id="email">johndoe@example.com</span></p>
+
+    <!-- Tombol Edit -->
+    <button onclick="editData()">Edit</button>
+
+    <!-- Container Edit -->
+    <div id="editContainer" class="edit-container">
+      <input type="text" id="inputNama" placeholder="Nama" />
+      <input type="email" id="inputEmail" placeholder="Email" />
+      <button onclick="simpanData()">Simpan</button>
+    </div>
+
+    <script>
+      // ini penulisan kode javascript di dalam tag <body>
+      console.log('Saya belajar Javascript. Hello JS dari Body');
+      document.write('Hello World');
+
+      // membuat objek elemen
+      var hasil = document.getElementById('hasil-output');
+
+      // menampilkan output ke elemen hasil
+      hasil.innerHTML = '<p>Aku suka Javascript</p>';
+
+      // script dari chatgbt
+      function editData() {
+        // Menampilkan container edit dan menyembunyikan elemen tampilan
+        document.getElementById('nama').style.display = 'none';
+        document.getElementById('email').style.display = 'none';
+        document.getElementById('editContainer').style.display = 'block';
+
+        // Mengisi nilai input dengan data yang ada
+        document.getElementById('inputNama').value = document.getElementById('nama').textContent;
+        document.getElementById('inputEmail').value = document.getElementById('email').textContent;
+      }
+
+      function simpanData() {
+        // Mengambil nilai dari input
+        var nama = document.getElementById('inputNama').value;
+        var email = document.getElementById('inputEmail').value;
+
+        // Menyimpan nilai ke elemen tampilan
+        document.getElementById('nama').textContent = nama;
+        document.getElementById('email').textContent = email;
+
+        // Menyembunyikan container edit dan menampilkan kembali elemen tampilan
+        document.getElementById('nama').style.display = 'inline';
+        document.getElementById('email').style.display = 'inline';
+        document.getElementById('editContainer').style.display = 'none';
+      }
+    </script>
+    <br />
+    <a href="#" onclick="alert('Yey!')">Klik aku V1!</a>
+    <br />
+    <a href="javascript:alert('Yey!')">Klik aku V2!</a>
+    <br />
+    <button onclick="sayHello()">Klik Aku V3!</button>
+  </body>
+</html>
